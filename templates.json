@@ -1,0 +1,115 @@
+[
+	{
+		"type": "container",
+		"title": "Organizr",
+		"name": "organizr",
+		"description": "HTPC/Homelab Services Organizer - Written in PHP",
+		"platform": "linux",
+		"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/organizr-icon.png",
+		"image": "lsiocommunity/organizr:latest",
+		"ports": [
+			"80/tcp",
+			"443/tcp"
+		],
+		"env": [
+			{
+				"name": "PUID",
+				"label": "Docker UserID"
+			},
+			{
+				"name": "PGID",
+				"label": "Docker GroupID"
+			}
+		],
+		"volumes": [
+			"/config"
+		],
+		"restart": "always"
+	},
+	{
+		"type": "container",
+		"title": "Plex Media Server - Plex Pass",
+		"name": "plexmediaserver-plexpass",
+		"description": "Home Media Server",
+		"platform": "linux",
+		"logo": "https://github.com/plexinc/pms-docker/raw/master/img/plex-server.png",
+		"image": "plexinc/pms-docker:plexpass",
+		"network": "host",
+		"env": [
+			{
+				"name": "HOME",
+				"label": "ENV : HOME",
+				"value": "/config"
+			}
+		],
+		"ports": [
+			"32400/tcp"
+		],
+		"volumes": [
+			"/data",
+			"/config",
+			"/transcode",
+			"/config/Library/Application Support/Plex Media Server/Logs"
+		],
+		"restart": "always"
+	},
+	{
+		"type": "container",
+		"title": "Tautulli",
+		"name": "tautulli",
+		"restart": "always",
+		"description": "Web Frond-end manager for Plex Media Server",
+		"platform": "linux",
+		"logo": "https://github.com/plexinc/pms-docker/raw/master/img/plex-server.png",
+		"image": "tautulli/tautulli:latest",
+		"network": "host",
+		"ports": [
+			"8181/tcp"
+		],
+		"volumes": [
+			"/config",
+			"/logs"
+		]
+	},
+	{
+		"type": "container",
+		"title": "MariaDB",
+		"name": "mariadb",
+		"restart": "always",
+        "description": "Performance beyond MySQL",
+		"categories": ["database"],
+		"platform": "linux",
+		"logo": "https://cloudinovasi.id/assets/img/logos/mariadb.png",
+		"image": "mariadb:latest",
+		"network": "host",
+		"env": [
+			{
+				"name": "MYSQL_ROOT_PASSWORD",
+				"label": "MYSQL_ROOT_PASSWORD"
+			}
+		],
+		"ports": [
+			"3306/tcp"
+		],
+		"volumes": ["/var/lib/mysql"]
+	},
+	{
+		"type": "container",
+		"title": "NextCloud",
+		"name": "nextcloud",
+		"description": "Home Cloud",
+		"platform": "linux",
+		"logo": "https://nextcloud.com/wp-content/themes/next/assets/img/common/nextcloud-square-logo.png",
+		"image": "nextcloud:latest",
+		"network": "host",
+		"ports": [
+			"80/tcp"
+		],
+		"volumes": [
+			"/var/www/nextcloud",
+			"/var/www/nextcloud/custom_apps",
+			"/var/www/nextcloud/config",
+			"/var/www/nextcloud/data"
+		]
+	}
+]
