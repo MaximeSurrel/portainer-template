@@ -125,7 +125,7 @@
 		"image": "writl/pyload:latest",
 		"network": "bridge",
 		"ports": [
-			"8181/tcp"
+			"8000/tcp"
 		],
 		"env": [
 			{
