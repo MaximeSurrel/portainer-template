@@ -31,7 +31,7 @@
 		"type": "container",
 		"title": "Plex Media Server - Plex Pass",
 		"name": "plexmediaserver-plexpass",
-		"description": "Home Media Server",
+		"description": "Official Plex Media Server Docker Repo",
 		"platform": "linux",
 		"logo": "https://github.com/plexinc/pms-docker/raw/master/img/plex-server.png",
 		"image": "plexinc/pms-docker:plexpass",
@@ -98,7 +98,7 @@
 		"type": "container",
 		"title": "NextCloud",
 		"name": "nextcloud",
-		"description": "Home Cloud",
+		"description": "A safe home for all your data",
 		"platform": "linux",
 		"logo": "https://nextcloud.com/wp-content/themes/next/assets/img/common/nextcloud-square-logo.png",
 		"image": "nextcloud:latest",
@@ -112,6 +112,34 @@
 			"/var/www/nextcloud/custom_apps",
 			"/var/www/nextcloud/config",
 			"/var/www/nextcloud/data"
+		]
+	},
+	{
+		"type": "container",
+		"title": "PyLoad",
+		"name": "pyload",
+		"restart": "always",
+		"description": "pyLoad is a fast, lightweight and full featured download manager for many One-Click-Hoster.",
+		"platform": "linux",
+		"logo": "https://www.babeuloula.fr/images/pyload.png",
+		"image": "writl/pyload:latest",
+		"network": "bridge",
+		"ports": [
+			"8181/tcp"
+		],
+		"env": [
+			{
+				"name": "PUID",
+				"label": "Docker UserID"
+			},
+			{
+				"name": "PGID",
+				"label": "Docker GroupID"
+			}
+		],
+		"volumes": [
+			"/opt/pyload/pyload-config",
+			"/opt/pyload/Downloads"
 		]
 	}
 ]
