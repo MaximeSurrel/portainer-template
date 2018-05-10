@@ -127,16 +127,6 @@
 		"ports": [
 			"8000/tcp"
 		],
-		"env": [
-			{
-				"name": "PUID",
-				"label": "Docker UserID"
-			},
-			{
-				"name": "PGID",
-				"label": "Docker GroupID"
-			}
-		],
 		"volumes": [
 			"/opt/pyload/pyload-config",
 			"/opt/pyload/Downloads"
