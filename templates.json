@@ -117,15 +117,25 @@
 	{
 		"type": "container",
 		"title": "PyLoad",
-		"name": "pyload",
+		"name": "pyLoad",
 		"restart": "always",
 		"description": "pyLoad is a fast, lightweight and full featured download manager for many One-Click-Hoster.",
 		"platform": "linux",
 		"logo": "https://www.babeuloula.fr/images/pyload.png",
-		"image": "writl/pyload:latest",
+		"image": "cobraeti/pyload:latest",
 		"network": "bridge",
 		"ports": [
 			"8000/tcp"
+		],
+		"env": [
+			{
+				"name": "PUID",
+				"label": "Docker UserID"
+			},
+			{
+				"name": "PGID",
+				"label": "Docker GroupID"
+			}
 		],
 		"volumes": [
 			"/opt/pyload/pyload-config",
