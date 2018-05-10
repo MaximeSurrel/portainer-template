@@ -138,8 +138,9 @@
 			}
 		],
 		"volumes": [
-			"/opt/pyload/pyload-config",
-			"/opt/pyload/Downloads"
+			"/config",
+			"/downloads",
+			"/ssl"
 		]
 	}
 ]
