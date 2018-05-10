@@ -23,7 +23,8 @@
 			}
 		],
 		"volumes": [
-			"/config"
+			"/config",
+			"/ssl"
 		],
 		"restart": "always"
 	},
@@ -69,7 +70,8 @@
 		],
 		"volumes": [
 			"/config",
-			"/logs"
+			"/logs",
+			"/ssl"
 		]
 	},
 	{
@@ -92,7 +94,9 @@
 		"ports": [
 			"3306/tcp"
 		],
-		"volumes": ["/var/lib/mysql"]
+		"volumes": [
+			"/var/lib/mysql"
+		]
 	},
 	{
 		"type": "container",
@@ -111,7 +115,9 @@
 			"/var/www/nextcloud",
 			"/var/www/nextcloud/custom_apps",
 			"/var/www/nextcloud/config",
-			"/var/www/nextcloud/data"
+			"/var/www/nextcloud/data",
+			"/ssl"
+			
 		]
 	},
 	{
