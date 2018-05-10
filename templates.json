@@ -156,12 +156,14 @@
 		"description": "A Docker container for running FileBot, a media file organizer. It supports UI and a watch folder.",
 		"platform": "linux",
 		"logo": "https://a.thumbs.redditmedia.com/BULbmpuLUgGz229Kf_7lYJQvRJjwIdvkJ8lWcXmQSY0.jpg",
-		"image": "coppit/filebot:latest",
+		"image": "rednoah/filebot:latest",
 		"network": "bridge",
+		"ports": [
+			"5452/tcp"
+		],
 		"volumes": [
-			"/config",
-			"/input",
-			"/output"			
+			"/downloads",
+			"/media"		
 		]
 	}
 ]
