@@ -7,6 +7,7 @@
 		"platform": "linux",
 		"logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/organizr-icon.png",
 		"image": "lsiocommunity/organizr:latest",
+		"network": "bridge",
 		"ports": [
 			"80/tcp",
 			"443/tcp"
@@ -34,7 +35,7 @@
 		"platform": "linux",
 		"logo": "https://github.com/plexinc/pms-docker/raw/master/img/plex-server.png",
 		"image": "plexinc/pms-docker:plexpass",
-		"network": "host",
+		"network": "bridge",
 		"env": [
 			{
 				"name": "HOME",
@@ -62,7 +63,7 @@
 		"platform": "linux",
 		"logo": "https://github.com/plexinc/pms-docker/raw/master/img/plex-server.png",
 		"image": "tautulli/tautulli:latest",
-		"network": "host",
+		"network": "bridge",
 		"ports": [
 			"8181/tcp"
 		],
@@ -101,9 +102,10 @@
 		"platform": "linux",
 		"logo": "https://nextcloud.com/wp-content/themes/next/assets/img/common/nextcloud-square-logo.png",
 		"image": "nextcloud:latest",
-		"network": "host",
+		"network": "bridge",
 		"ports": [
-			"80/tcp"
+			"80/tcp",
+			"443/tcp"
 		],
 		"volumes": [
 			"/var/www/nextcloud",
