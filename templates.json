@@ -165,5 +165,21 @@
 			"/downloads",
 			"/media"		
 		]
+	},
+	{
+		"type": "container",
+		"title": "PS3Netsrv",
+		"name": "ps3netsrv",
+		"description": "This is a Docker container for ps3netsrv",
+		"platform": "linux",
+		"logo": "http://www.psx-place.com/attachments/t5q3zmc-520x245-png.4405/",
+		"image": "shawly/ps3netsrv:latest",
+		"network": "bridge",
+		"ports": [
+			"38008/tcp"
+		],
+		"volumes": [
+			"/games"		
+		]
 	}
 ]
